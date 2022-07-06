@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">CashbackApp</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="gfellloo">gfellloo</string>
+    <string name="title_history" >History</string>
+    <string name="title_addexpense" >Add Expense</string>
+</resources>
