@@ -1,7 +1,10 @@
 package com.example.cashbackapp;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
+import com.example.cashbackapp.ui.addexpense.AddexpenseFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -33,5 +36,7 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
     }
+
+
 
 }

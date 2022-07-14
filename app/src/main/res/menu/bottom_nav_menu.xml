@@ -13,7 +13,7 @@
 
     <item
         android:id="@+id/navigation_addexpense"
-        android:icon="@drawable/ic_notifications_black_24dp"
+        android:icon="@drawable/ic_fab_add"
         android:title="@string/title_addexpense" />
 
 </menu>
