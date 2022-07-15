@@ -1,7 +1,6 @@
 package com.example.cashbackapp.ui.addexpense;
 
 import android.app.DatePickerDialog;
-import android.content.Context;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.LayoutInflater;
@@ -16,7 +15,6 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.cashbackapp.MainActivity;
 import com.example.cashbackapp.R;
 import com.example.cashbackapp.databinding.FragmentAddexpenseBinding;
 
@@ -24,9 +22,10 @@ import java.util.Calendar;
 
 public class AddexpenseFragment extends Fragment {
 
+    DatePickerDialog picker;
+    EditText eText;
     private FragmentAddexpenseBinding binding;
 
-    DatePickerDialog picker;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
@@ -36,11 +35,15 @@ public class AddexpenseFragment extends Fragment {
         binding = FragmentAddexpenseBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
+        //dropdown expense category field
+        Spinner dropdown = root.findViewById(R.id.spinner1);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(root.getContext(),
+                R.array.type, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        dropdown.setAdapter(adapter);
 
-//        final TextView textView = binding.textAddexpense;
-//        addexpenseViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
-
-        EditText eText = (EditText) getView().findViewById(R.id.editTextDate);
+        //select date field
+        eText = root.findViewById(R.id.editTextDate);
         eText.setInputType(InputType.TYPE_NULL);
         eText.setOnClickListener(new View.OnClickListener() {
             @Override
