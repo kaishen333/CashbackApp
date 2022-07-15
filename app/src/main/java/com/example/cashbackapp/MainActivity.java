@@ -1,8 +1,14 @@
 package com.example.cashbackapp;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.DatePicker;
+import android.widget.EditText;
+import android.widget.Spinner;
 
 import com.example.cashbackapp.ui.addexpense.AddexpenseFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -14,6 +20,8 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.example.cashbackapp.databinding.ActivityMainBinding;
+
+import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -36,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
     }
-
 
 
 }

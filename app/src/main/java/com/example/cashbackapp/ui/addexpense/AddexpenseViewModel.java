@@ -11,6 +11,8 @@ public class AddexpenseViewModel extends ViewModel {
     public AddexpenseViewModel() {
         mText = new MutableLiveData<>();
         mText.setValue("This is add expense fragment");
+
+
     }
 
     public LiveData<String> getText() {

@@ -7,18 +7,113 @@
     tools:context=".ui.home.HomeFragment">
 
     <TextView
-        android:id="@+id/text_cashback"
+        android:id="@+id/text_amount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
-        android:text="Cashback - June"
+        android:text="RM -"
+        android:textAlignment="center"
+        android:textSize="38sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/text_cashback"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cashback for June"
+        android:textAlignment="center"
+        android:textSize="22sp"
+        app:layout_constraintTop_toBottomOf="@+id/text_amount"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:id="@+id/text_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="25dp"
+        android:text="Spending Category"
         android:textAlignment="viewStart"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/text_cashback" />
+
+    <TextView
+        android:id="@+id/text_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="25dp"
+        android:text="Total Spend"
+        android:textAlignment="viewStart"
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/othersView" />
+
+    <TextView
+        android:id="@+id/text_totalSpend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="25dp"
+        android:text="RM -"
+        android:textAlignment="viewStart"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/text_total"
+        app:layout_constraintTop_toBottomOf="@+id/othersView" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_total" />
+
+    <TextView
+        android:id="@+id/text_hint1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="15dp"
+        android:text="Spend"
+        android:textAlignment="viewStart"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar" />
+
+    <TextView
+        android:id="@+id/text_hint2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="15dp"
+        android:text="RM - "
+        android:textAlignment="viewStart"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@+id/text_hint1"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar" />
+
+    <TextView
+        android:id="@+id/text_hint3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="15dp"
+        android:text="more to unlock greater cashback!"
+        android:textAlignment="viewStart"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@+id/text_hint2"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/groceriesView"
@@ -73,106 +168,6 @@
             app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.cardview.widget.CardView>
-
-    <TextView
-        android:id="@+id/text_hint1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="15dp"
-        android:text="Spend"
-        android:textAlignment="viewStart"
-        android:textSize="15sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/progressBar" />
-
-    <TextView
-        android:id="@+id/text_amount"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="24dp"
-        android:text="RM -"
-        android:textAlignment="viewStart"
-        android:textSize="38sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_cashback" />
-
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_total" />
-
-    <TextView
-        android:id="@+id/text_totalSpend"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="7dp"
-        android:layout_marginTop="25dp"
-        android:text="RM -"
-        android:textAlignment="viewStart"
-        android:textSize="22sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/text_total"
-        app:layout_constraintTop_toBottomOf="@+id/othersView" />
-
-    <TextView
-        android:id="@+id/text_total"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="25dp"
-        android:text="Total Spend"
-        android:textAlignment="viewStart"
-        android:textSize="22sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/othersView" />
-
-    <TextView
-        android:id="@+id/text_category"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="20dp"
-        android:text="Spending Category"
-        android:textAlignment="viewStart"
-        android:textSize="22sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_amount" />
-
-    <TextView
-        android:id="@+id/text_hint2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="15dp"
-        android:text="RM - "
-        android:textAlignment="viewStart"
-        android:textSize="15sp"
-        app:layout_constraintStart_toEndOf="@+id/text_hint1"
-        app:layout_constraintTop_toBottomOf="@+id/progressBar" />
-
-    <TextView
-        android:id="@+id/text_hint3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="15dp"
-        android:text="more to unlock greater cashback!"
-        android:textAlignment="viewStart"
-        android:textSize="15sp"
-        app:layout_constraintStart_toEndOf="@+id/text_hint2"
-        app:layout_constraintTop_toBottomOf="@+id/progressBar" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/othersView"
@@ -232,13 +227,13 @@
         android:id="@+id/petrolView"
         android:layout_width="380dp"
         android:layout_height="50dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="15dp"
         android:textAlignment="center"
         app:cardCornerRadius="10dp"
         app:cardElevation="3dp"
         app:circularflow_radiusInDP="15"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintHorizontal_bias="0.258"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_category">
 

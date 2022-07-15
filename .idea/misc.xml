@@ -27,11 +27,11 @@
         <entry key="..\:/Users/kaish/Documents/GitHub/CashbackApp/app/src/main/res/drawable/ic_petrol.xml" value="0.2985" />
         <entry key="..\:/Users/kaish/Documents/GitHub/CashbackApp/app/src/main/res/layout/activity_add_modify_expense.xml" value="0.33" />
         <entry key="..\:/Users/kaish/Documents/GitHub/CashbackApp/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/Users/kaish/Documents/GitHub/CashbackApp/app/src/main/res/layout/fragment_addexpense.xml" value="0.14387031408308004" />
+        <entry key="..\:/Users/kaish/Documents/GitHub/CashbackApp/app/src/main/res/layout/fragment_addexpense.xml" value="0.33" />
         <entry key="..\:/Users/kaish/Documents/GitHub/CashbackApp/app/src/main/res/layout/fragment_editexpense.xml" value="0.14387031408308004" />
-        <entry key="..\:/Users/kaish/Documents/GitHub/CashbackApp/app/src/main/res/layout/fragment_history.xml" value="0.14387031408308004" />
+        <entry key="..\:/Users/kaish/Documents/GitHub/CashbackApp/app/src/main/res/layout/fragment_history.xml" value="0.5" />
         <entry key="..\:/Users/kaish/Documents/GitHub/CashbackApp/app/src/main/res/layout/fragment_home.xml" value="0.33" />
-        <entry key="..\:/Users/kaish/Documents/GitHub/CashbackApp/app/src/main/res/menu/bottom_nav_menu.xml" value="0.14722222222222223" />
+        <entry key="..\:/Users/kaish/Documents/GitHub/CashbackApp/app/src/main/res/menu/bottom_nav_menu.xml" value="0.33" />
       </map>
     </option>
   </component>
