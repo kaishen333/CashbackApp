@@ -1,15 +1,18 @@
 package com.example.cashbackapp.ui.addexpense;
 
 import android.app.DatePickerDialog;
+import android.content.Context;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -21,6 +24,11 @@ import com.example.cashbackapp.databinding.FragmentAddexpenseBinding;
 import java.util.Calendar;
 
 public class AddexpenseFragment extends Fragment {
+
+    //form fields
+    EditText date, amount;
+    Spinner spinner1;
+    Button submit;
 
     DatePickerDialog picker;
     EditText eText;
@@ -61,6 +69,23 @@ public class AddexpenseFragment extends Fragment {
                             }
                         }, year, month, day);
                 picker.show();
+            }
+        });
+
+        //form submission
+        spinner1 = root.findViewById(R.id.spinner1);
+        amount = root.findViewById(R.id.editTextNumberDecimal);
+        date = root.findViewById(R.id.editTextDate);
+        submit = root.findViewById(R.id.submit);
+        submit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Context context = getContext();
+                CharSequence text = "Hello toast!";
+                int duration = Toast.LENGTH_SHORT;
+
+                Toast toast = Toast.makeText(context, date.getText().toString()+date.getText().toString(), duration);
+                toast.show();
             }
         });
 
