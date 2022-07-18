@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
-class MyDatabaseHelper extends SQLiteOpenHelper {
+public class MyDatabaseHelper extends SQLiteOpenHelper {
 
     private Context context;
     private static final String DATABASE_NAME = "ExpenseStore.db";
@@ -22,7 +22,7 @@ class MyDatabaseHelper extends SQLiteOpenHelper {
     private static final String COLUMN_AMOUNT = "expense_amount";
     private static final String COLUMN_DATE = "expense_date";
 
-    MyDatabaseHelper(@Nullable Context context) {
+    public MyDatabaseHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
         this.context = context;
     }
@@ -43,7 +43,7 @@ class MyDatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    void addExpense(String category, float amount, String date) {
+    public void addExpense(String category, float amount, String date) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 

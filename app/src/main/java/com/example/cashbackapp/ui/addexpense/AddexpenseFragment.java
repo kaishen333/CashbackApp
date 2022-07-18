@@ -18,6 +18,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.cashbackapp.MyDatabaseHelper;
 import com.example.cashbackapp.R;
 import com.example.cashbackapp.databinding.FragmentAddexpenseBinding;
 
@@ -84,8 +85,12 @@ public class AddexpenseFragment extends Fragment {
                 CharSequence text = "Hello toast!";
                 int duration = Toast.LENGTH_SHORT;
 
-                Toast toast = Toast.makeText(context, date.getText().toString()+date.getText().toString(), duration);
+                Toast toast = Toast.makeText(context, spinner1.getSelectedItem().toString() + Integer.valueOf(amount.getText().toString().trim()) + date.getText().toString(), duration);
                 toast.show();
+
+                MyDatabaseHelper myDB = new MyDatabaseHelper(context);
+                myDB.addExpense(spinner1.getSelectedItem().toString(), Integer.valueOf(amount.getText().toString().trim()), date.getText().toString().trim());
+
             }
         });
 
