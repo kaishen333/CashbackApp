@@ -6,409 +6,443 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.history.HistoryFragment" >
+    tools:context=".ui.history.HistoryFragment">
 
-    <TextView
-        android:id="@+id/textView"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/empty_imageview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:text="Expense History"
+        android:layout_marginTop="230dp"
+        android:alpha="0.1"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_empty" />
+
+    <TextView
+        android:id="@+id/no_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="No Data."
         android:textSize="20sp"
-        android:textStyle="bold"
+        android:alpha="0.4"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/empty_imageview" />
+    <!--    <TextView-->
+    <!--        android:id="@+id/textView"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="24dp"-->
+    <!--        android:text="Expense History"-->
+    <!--        android:textSize="20sp"-->
+    <!--        android:textStyle="bold"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.0"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent" />-->
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/petrolView"
-        android:layout_width="380dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="24dp"
-        android:textAlignment="center"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="3dp"
-        app:circularflow_radiusInDP="15"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.25"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
-
-
-        <ImageView
-            android:id="@+id/petrolImage"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="13dp"
-            android:src="@drawable/ic_petrol" />
-
-        <TextView
-            android:id="@+id/petrolCashback"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="310dp"
-            android:layout_marginTop="13dp"
-            android:text="RM -"
-            android:textAlignment="inherit"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:id="@+id/petrolName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="65dp"
-            android:layout_marginTop="13dp"
-            android:text="Petrol"
-            android:textSize="12sp"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:id="@+id/petrolSpend"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="65dp"
-            android:layout_marginTop="25dp"
-            android:text="RM -"
-            android:textSize="12sp"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:id="@+id/spendDate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="105dp"
-            android:layout_marginTop="13dp"
-            android:text="21/07/2022"
-            android:textSize="10sp" />
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/petrolView1"
-        android:layout_width="380dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="15dp"
-        android:textAlignment="center"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="3dp"
-        app:circularflow_radiusInDP="15"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.25"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/petrolView5">
+    <!--    <androidx.cardview.widget.CardView-->
+    <!--        android:id="@+id/petrolView"-->
+    <!--        android:layout_width="380dp"-->
+    <!--        android:layout_height="50dp"-->
+    <!--        android:layout_marginTop="24dp"-->
+    <!--        android:textAlignment="center"-->
+    <!--        app:cardCornerRadius="10dp"-->
+    <!--        app:cardElevation="3dp"-->
+    <!--        app:circularflow_radiusInDP="15"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.25"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/textView">-->
 
 
-        <ImageView
-            android:id="@+id/petrolImage1"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="13dp"
-            android:src="@drawable/ic_petrol" />
+    <!--        <ImageView-->
+    <!--            android:id="@+id/petrolImage"-->
+    <!--            android:layout_width="25dp"-->
+    <!--            android:layout_height="25dp"-->
+    <!--            android:layout_marginLeft="20dp"-->
+    <!--            android:layout_marginTop="13dp"-->
+    <!--            android:src="@drawable/ic_petrol" />-->
 
-        <TextView
-            android:id="@+id/petrolCashback1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="310dp"
-            android:layout_marginTop="13dp"
-            android:text="RM -"
-            android:textAlignment="inherit"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent" />
+    <!--        <TextView-->
+    <!--            android:id="@+id/petrolCashback"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginStart="310dp"-->
+    <!--            android:layout_marginTop="13dp"-->
+    <!--            android:text="RM -"-->
+    <!--            android:textAlignment="inherit"-->
+    <!--            android:textSize="16sp"-->
+    <!--            app:layout_constraintStart_toStartOf="parent" />-->
 
-        <TextView
-            android:id="@+id/petrolName1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="65dp"
-            android:layout_marginTop="13dp"
-            android:text="Petrol"
-            android:textSize="12sp"
-            app:layout_constraintStart_toStartOf="parent" />
+    <!--        <TextView-->
+    <!--            android:id="@+id/petrolName"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginLeft="65dp"-->
+    <!--            android:layout_marginTop="13dp"-->
+    <!--            android:text="Petrol"-->
+    <!--            android:textSize="12sp"-->
+    <!--            app:layout_constraintStart_toStartOf="parent" />-->
 
-        <TextView
-            android:id="@+id/petrolSpend1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="65dp"
-            android:layout_marginTop="25dp"
-            android:text="RM -"
-            android:textSize="12sp"
-            app:layout_constraintStart_toStartOf="parent" />
+    <!--        <TextView-->
+    <!--            android:id="@+id/petrolSpend"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginLeft="65dp"-->
+    <!--            android:layout_marginTop="25dp"-->
+    <!--            android:text="RM -"-->
+    <!--            android:textSize="12sp"-->
+    <!--            app:layout_constraintStart_toStartOf="parent" />-->
 
-        <TextView
-            android:id="@+id/spendDate1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="105dp"
-            android:layout_marginTop="13dp"
-            android:text="21/07/2022"
-            android:textSize="10sp" />
+    <!--        <TextView-->
+    <!--            android:id="@+id/spendDate"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginLeft="105dp"-->
+    <!--            android:layout_marginTop="13dp"-->
+    <!--            android:text="21/07/2022"-->
+    <!--            android:textSize="10sp" />-->
 
-    </androidx.cardview.widget.CardView>
+    <!--    </androidx.cardview.widget.CardView>-->
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/petrolView3"
-        android:layout_width="380dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="15dp"
-        android:textAlignment="center"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="3dp"
-        app:circularflow_radiusInDP="15"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.25"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/petrolView2">
-
-
-        <ImageView
-            android:id="@+id/petrolImage3"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="13dp"
-            android:src="@drawable/ic_petrol" />
-
-        <TextView
-            android:id="@+id/petrolCashback3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="310dp"
-            android:layout_marginTop="13dp"
-            android:text="RM -"
-            android:textAlignment="inherit"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:id="@+id/petrolName3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="65dp"
-            android:layout_marginTop="13dp"
-            android:text="Petrol"
-            android:textSize="12sp"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:id="@+id/petrolSpend3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="65dp"
-            android:layout_marginTop="25dp"
-            android:text="RM -"
-            android:textSize="12sp"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:id="@+id/spendDate3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="105dp"
-            android:layout_marginTop="13dp"
-            android:text="21/07/2022"
-            android:textSize="10sp" />
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/petrolView5"
-        android:layout_width="380dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="12dp"
-        android:textAlignment="center"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="3dp"
-        app:circularflow_radiusInDP="15"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.25"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/petrolView">
+    <!--    <androidx.cardview.widget.CardView-->
+    <!--        android:id="@+id/petrolView1"-->
+    <!--        android:layout_width="380dp"-->
+    <!--        android:layout_height="50dp"-->
+    <!--        android:layout_marginTop="15dp"-->
+    <!--        android:textAlignment="center"-->
+    <!--        app:cardCornerRadius="10dp"-->
+    <!--        app:cardElevation="3dp"-->
+    <!--        app:circularflow_radiusInDP="15"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.25"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/petrolView5">-->
 
 
-        <ImageView
-            android:id="@+id/petrolImage5"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="13dp"
-            android:src="@drawable/ic_petrol" />
+    <!--        <ImageView-->
+    <!--            android:id="@+id/petrolImage1"-->
+    <!--            android:layout_width="25dp"-->
+    <!--            android:layout_height="25dp"-->
+    <!--            android:layout_marginLeft="20dp"-->
+    <!--            android:layout_marginTop="13dp"-->
+    <!--            android:src="@drawable/ic_petrol" />-->
 
-        <TextView
-            android:id="@+id/petrolCashback5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="310dp"
-            android:layout_marginTop="13dp"
-            android:text="RM -"
-            android:textAlignment="inherit"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent" />
+    <!--        <TextView-->
+    <!--            android:id="@+id/petrolCashback1"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginStart="310dp"-->
+    <!--            android:layout_marginTop="13dp"-->
+    <!--            android:text="RM -"-->
+    <!--            android:textAlignment="inherit"-->
+    <!--            android:textSize="16sp"-->
+    <!--            app:layout_constraintStart_toStartOf="parent" />-->
 
-        <TextView
-            android:id="@+id/petrolName5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="65dp"
-            android:layout_marginTop="13dp"
-            android:text="Petrol"
-            android:textSize="12sp"
-            app:layout_constraintStart_toStartOf="parent" />
+    <!--        <TextView-->
+    <!--            android:id="@+id/petrolName1"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginLeft="65dp"-->
+    <!--            android:layout_marginTop="13dp"-->
+    <!--            android:text="Petrol"-->
+    <!--            android:textSize="12sp"-->
+    <!--            app:layout_constraintStart_toStartOf="parent" />-->
 
-        <TextView
-            android:id="@+id/petrolSpend5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="65dp"
-            android:layout_marginTop="25dp"
-            android:text="RM -"
-            android:textSize="12sp"
-            app:layout_constraintStart_toStartOf="parent" />
+    <!--        <TextView-->
+    <!--            android:id="@+id/petrolSpend1"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginLeft="65dp"-->
+    <!--            android:layout_marginTop="25dp"-->
+    <!--            android:text="RM -"-->
+    <!--            android:textSize="12sp"-->
+    <!--            app:layout_constraintStart_toStartOf="parent" />-->
 
-        <TextView
-            android:id="@+id/spendDate5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="105dp"
-            android:layout_marginTop="13dp"
-            android:text="21/07/2022"
-            android:textSize="10sp" />
+    <!--        <TextView-->
+    <!--            android:id="@+id/spendDate1"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginLeft="105dp"-->
+    <!--            android:layout_marginTop="13dp"-->
+    <!--            android:text="21/07/2022"-->
+    <!--            android:textSize="10sp" />-->
 
-    </androidx.cardview.widget.CardView>
+    <!--    </androidx.cardview.widget.CardView>-->
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/petrolView4"
-        android:layout_width="380dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="15dp"
-        android:textAlignment="center"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="3dp"
-        app:circularflow_radiusInDP="15"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.25"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/petrolView3">
-
-
-        <ImageView
-            android:id="@+id/petrolImage4"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="13dp"
-            android:src="@drawable/ic_petrol" />
-
-        <TextView
-            android:id="@+id/petrolCashback4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="310dp"
-            android:layout_marginTop="13dp"
-            android:text="RM -"
-            android:textAlignment="inherit"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:id="@+id/petrolName4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="65dp"
-            android:layout_marginTop="13dp"
-            android:text="Petrol"
-            android:textSize="12sp"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:id="@+id/petrolSpend4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="65dp"
-            android:layout_marginTop="25dp"
-            android:text="RM -"
-            android:textSize="12sp"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:id="@+id/spendDate4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="105dp"
-            android:layout_marginTop="13dp"
-            android:text="21/07/2022"
-            android:textSize="10sp" />
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/petrolView2"
-        android:layout_width="380dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="15dp"
-        android:textAlignment="center"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="3dp"
-        app:circularflow_radiusInDP="15"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.25"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/petrolView1">
+    <!--    <androidx.cardview.widget.CardView-->
+    <!--        android:id="@+id/petrolView3"-->
+    <!--        android:layout_width="380dp"-->
+    <!--        android:layout_height="50dp"-->
+    <!--        android:layout_marginTop="15dp"-->
+    <!--        android:textAlignment="center"-->
+    <!--        app:cardCornerRadius="10dp"-->
+    <!--        app:cardElevation="3dp"-->
+    <!--        app:circularflow_radiusInDP="15"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.25"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/petrolView2">-->
 
 
-        <ImageView
-            android:id="@+id/petrolImage2"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="13dp"
-            android:src="@drawable/ic_petrol" />
+    <!--        <ImageView-->
+    <!--            android:id="@+id/petrolImage3"-->
+    <!--            android:layout_width="25dp"-->
+    <!--            android:layout_height="25dp"-->
+    <!--            android:layout_marginLeft="20dp"-->
+    <!--            android:layout_marginTop="13dp"-->
+    <!--            android:src="@drawable/ic_petrol" />-->
 
-        <TextView
-            android:id="@+id/petrolCashback2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="310dp"
-            android:layout_marginTop="13dp"
-            android:text="RM -"
-            android:textAlignment="inherit"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent" />
+    <!--        <TextView-->
+    <!--            android:id="@+id/petrolCashback3"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginStart="310dp"-->
+    <!--            android:layout_marginTop="13dp"-->
+    <!--            android:text="RM -"-->
+    <!--            android:textAlignment="inherit"-->
+    <!--            android:textSize="16sp"-->
+    <!--            app:layout_constraintStart_toStartOf="parent" />-->
 
-        <TextView
-            android:id="@+id/petrolName2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="65dp"
-            android:layout_marginTop="13dp"
-            android:text="Petrol"
-            android:textSize="12sp"
-            app:layout_constraintStart_toStartOf="parent" />
+    <!--        <TextView-->
+    <!--            android:id="@+id/petrolName3"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginLeft="65dp"-->
+    <!--            android:layout_marginTop="13dp"-->
+    <!--            android:text="Petrol"-->
+    <!--            android:textSize="12sp"-->
+    <!--            app:layout_constraintStart_toStartOf="parent" />-->
 
-        <TextView
-            android:id="@+id/petrolSpend2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="65dp"
-            android:layout_marginTop="25dp"
-            android:text="RM -"
-            android:textSize="12sp"
-            app:layout_constraintStart_toStartOf="parent" />
+    <!--        <TextView-->
+    <!--            android:id="@+id/petrolSpend3"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginLeft="65dp"-->
+    <!--            android:layout_marginTop="25dp"-->
+    <!--            android:text="RM -"-->
+    <!--            android:textSize="12sp"-->
+    <!--            app:layout_constraintStart_toStartOf="parent" />-->
 
-        <TextView
-            android:id="@+id/spendDate2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="105dp"
-            android:layout_marginTop="13dp"
-            android:text="21/07/2022"
-            android:textSize="10sp" />
+    <!--        <TextView-->
+    <!--            android:id="@+id/spendDate3"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginLeft="105dp"-->
+    <!--            android:layout_marginTop="13dp"-->
+    <!--            android:text="21/07/2022"-->
+    <!--            android:textSize="10sp" />-->
 
-    </androidx.cardview.widget.CardView>
+    <!--    </androidx.cardview.widget.CardView>-->
+
+    <!--    <androidx.cardview.widget.CardView-->
+    <!--        android:id="@+id/petrolView5"-->
+    <!--        android:layout_width="380dp"-->
+    <!--        android:layout_height="50dp"-->
+    <!--        android:layout_marginTop="12dp"-->
+    <!--        android:textAlignment="center"-->
+    <!--        app:cardCornerRadius="10dp"-->
+    <!--        app:cardElevation="3dp"-->
+    <!--        app:circularflow_radiusInDP="15"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.25"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/petrolView">-->
+
+
+    <!--        <ImageView-->
+    <!--            android:id="@+id/petrolImage5"-->
+    <!--            android:layout_width="25dp"-->
+    <!--            android:layout_height="25dp"-->
+    <!--            android:layout_marginLeft="20dp"-->
+    <!--            android:layout_marginTop="13dp"-->
+    <!--            android:src="@drawable/ic_petrol" />-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/petrolCashback5"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginStart="310dp"-->
+    <!--            android:layout_marginTop="13dp"-->
+    <!--            android:text="RM -"-->
+    <!--            android:textAlignment="inherit"-->
+    <!--            android:textSize="16sp"-->
+    <!--            app:layout_constraintStart_toStartOf="parent" />-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/petrolName5"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginLeft="65dp"-->
+    <!--            android:layout_marginTop="13dp"-->
+    <!--            android:text="Petrol"-->
+    <!--            android:textSize="12sp"-->
+    <!--            app:layout_constraintStart_toStartOf="parent" />-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/petrolSpend5"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginLeft="65dp"-->
+    <!--            android:layout_marginTop="25dp"-->
+    <!--            android:text="RM -"-->
+    <!--            android:textSize="12sp"-->
+    <!--            app:layout_constraintStart_toStartOf="parent" />-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/spendDate5"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginLeft="105dp"-->
+    <!--            android:layout_marginTop="13dp"-->
+    <!--            android:text="21/07/2022"-->
+    <!--            android:textSize="10sp" />-->
+
+    <!--    </androidx.cardview.widget.CardView>-->
+
+    <!--    <androidx.cardview.widget.CardView-->
+    <!--        android:id="@+id/petrolView4"-->
+    <!--        android:layout_width="380dp"-->
+    <!--        android:layout_height="50dp"-->
+    <!--        android:layout_marginTop="15dp"-->
+    <!--        android:textAlignment="center"-->
+    <!--        app:cardCornerRadius="10dp"-->
+    <!--        app:cardElevation="3dp"-->
+    <!--        app:circularflow_radiusInDP="15"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.25"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/petrolView3">-->
+
+
+    <!--        <ImageView-->
+    <!--            android:id="@+id/petrolImage4"-->
+    <!--            android:layout_width="25dp"-->
+    <!--            android:layout_height="25dp"-->
+    <!--            android:layout_marginLeft="20dp"-->
+    <!--            android:layout_marginTop="13dp"-->
+    <!--            android:src="@drawable/ic_petrol" />-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/petrolCashback4"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginStart="310dp"-->
+    <!--            android:layout_marginTop="13dp"-->
+    <!--            android:text="RM -"-->
+    <!--            android:textAlignment="inherit"-->
+    <!--            android:textSize="16sp"-->
+    <!--            app:layout_constraintStart_toStartOf="parent" />-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/petrolName4"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginLeft="65dp"-->
+    <!--            android:layout_marginTop="13dp"-->
+    <!--            android:text="Petrol"-->
+    <!--            android:textSize="12sp"-->
+    <!--            app:layout_constraintStart_toStartOf="parent" />-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/petrolSpend4"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginLeft="65dp"-->
+    <!--            android:layout_marginTop="25dp"-->
+    <!--            android:text="RM -"-->
+    <!--            android:textSize="12sp"-->
+    <!--            app:layout_constraintStart_toStartOf="parent" />-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/spendDate4"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginLeft="105dp"-->
+    <!--            android:layout_marginTop="13dp"-->
+    <!--            android:text="21/07/2022"-->
+    <!--            android:textSize="10sp" />-->
+
+    <!--    </androidx.cardview.widget.CardView>-->
+
+    <!--    <androidx.cardview.widget.CardView-->
+    <!--        android:id="@+id/petrolView2"-->
+    <!--        android:layout_width="380dp"-->
+    <!--        android:layout_height="50dp"-->
+    <!--        android:layout_marginTop="15dp"-->
+    <!--        android:textAlignment="center"-->
+    <!--        app:cardCornerRadius="10dp"-->
+    <!--        app:cardElevation="3dp"-->
+    <!--        app:circularflow_radiusInDP="15"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.25"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/petrolView1">-->
+
+
+    <!--        <ImageView-->
+    <!--            android:id="@+id/petrolImage2"-->
+    <!--            android:layout_width="25dp"-->
+    <!--            android:layout_height="25dp"-->
+    <!--            android:layout_marginLeft="20dp"-->
+    <!--            android:layout_marginTop="13dp"-->
+    <!--            android:src="@drawable/ic_petrol" />-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/petrolCashback2"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginStart="310dp"-->
+    <!--            android:layout_marginTop="13dp"-->
+    <!--            android:text="RM -"-->
+    <!--            android:textAlignment="inherit"-->
+    <!--            android:textSize="16sp"-->
+    <!--            app:layout_constraintStart_toStartOf="parent" />-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/petrolName2"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginLeft="65dp"-->
+    <!--            android:layout_marginTop="13dp"-->
+    <!--            android:text="Petrol"-->
+    <!--            android:textSize="12sp"-->
+    <!--            app:layout_constraintStart_toStartOf="parent" />-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/petrolSpend2"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginLeft="65dp"-->
+    <!--            android:layout_marginTop="25dp"-->
+    <!--            android:text="RM -"-->
+    <!--            android:textSize="12sp"-->
+    <!--            app:layout_constraintStart_toStartOf="parent" />-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/spendDate2"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginLeft="105dp"-->
+    <!--            android:layout_marginTop="13dp"-->
+    <!--            android:text="21/07/2022"-->
+    <!--            android:textSize="10sp" />-->
+
+    <!--    </androidx.cardview.widget.CardView>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

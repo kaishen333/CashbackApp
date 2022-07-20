@@ -74,7 +74,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    Cursor readAllData() {
+    public Cursor readAllData() {
         String query = "SELECT * FROM " + TABLE_NAME;
         SQLiteDatabase db = this.getReadableDatabase();
 
