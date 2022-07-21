@@ -82,14 +82,8 @@ public class AddexpenseFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Context context = getContext();
-                CharSequence text = "Hello toast!";
-                int duration = Toast.LENGTH_SHORT;
-
-//                Toast toast = Toast.makeText(context, spinner1.getSelectedItem().toString() + Integer.valueOf(amount.getText().toString().trim()) + date.getText().toString(), duration);
-//                toast.show();
-
                 MyDatabaseHelper myDB = new MyDatabaseHelper(context);
-                myDB.addExpense(spinner1.getSelectedItem().toString(), Integer.valueOf(amount.getText().toString().trim()), date.getText().toString().trim());
+                myDB.addExpense(spinner1.getSelectedItem().toString(), amount.getText().toString().trim(), date.getText().toString().trim());
 
             }
         });

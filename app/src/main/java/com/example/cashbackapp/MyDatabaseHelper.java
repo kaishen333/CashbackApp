@@ -43,7 +43,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public void addExpense(String category, float amount, String date) {
+    public void addExpense(String category, String amount, String date) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
@@ -58,7 +58,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
-    void updateExpense(String row_id, String category, float amount, String date) {
+    void updateExpense(String row_id, String category, String amount, String date) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put(COLUMN_CATEGORY, category);

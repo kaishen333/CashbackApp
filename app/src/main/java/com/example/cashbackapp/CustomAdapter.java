@@ -3,6 +3,7 @@ package com.example.cashbackapp;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,11 +11,13 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.cashbackapp.ui.UpdateActivity;
+
 
 import java.util.ArrayList;
 
@@ -42,8 +45,9 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         return new MyViewHolder(view);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final MyViewHolder holder, int position) {
 
         holder.expense_id_txt.setText(String.valueOf(expense_id.get(position)));
         holder.expense_category_txt.setText(String.valueOf(expense_category.get(position)));
@@ -53,15 +57,14 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
         holder.mainLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, UpdateActivity.class);
+                Intent intent = new Intent(context, UpdateExpense.class);
                 intent.putExtra("id", String.valueOf(expense_id.get(position)));
-                intent.putExtra("title", String.valueOf(expense_category.get(position)));
-                intent.putExtra("author", String.valueOf(expense_amount.get(position)));
-                intent.putExtra("pages", String.valueOf(expense_date.get(position)));
+                intent.putExtra("category", String.valueOf(expense_category.get(position)));
+                intent.putExtra("amount", String.valueOf(expense_amount.get(position)));
+                intent.putExtra("date", String.valueOf(expense_date.get(position)));
                 activity.startActivityForResult(intent, 1);
             }
         });
-
     }
 
     @Override

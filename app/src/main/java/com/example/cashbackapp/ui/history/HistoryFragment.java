@@ -1,6 +1,7 @@
 package com.example.cashbackapp.ui.history;
 
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -67,6 +69,7 @@ public class HistoryFragment extends Fragment {
         binding = null;
     }
 
+
     void storeDataInArrays(){
         Cursor cursor = myDB.readAllData();
         if(cursor.getCount() == 0){
@@ -76,7 +79,7 @@ public class HistoryFragment extends Fragment {
             while (cursor.moveToNext()){
                 expense_id.add(cursor.getString(0));
                 expense_category.add(cursor.getString(1));
-                expense_amount.add("RM " + cursor.getString(2));
+                expense_amount.add(cursor.getString(2));
                 expense_date.add(cursor.getString(3));
             }
             empty_imageview.setVisibility(View.GONE);
