@@ -23,7 +23,7 @@
         android:id="@+id/text_cashback"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Cashback for June"
+        android:text="Cashback for "
         android:textAlignment="center"
         android:textSize="22sp"
         app:layout_constraintTop_toBottomOf="@+id/text_amount"
@@ -42,6 +42,224 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_cashback" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/petrolView"
+        android:layout_width="380dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        android:textAlignment="center"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="3dp"
+        app:circularflow_radiusInDP="15"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.258"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_category">
+
+
+        <ImageView
+            android:id="@+id/petrolImage"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="13dp"
+            android:src="@drawable/ic_petrol" />
+
+        <TextView
+            android:id="@+id/petrolCashback"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="310dp"
+            android:layout_marginTop="13dp"
+            android:text="RM -"
+            android:textAlignment="inherit"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/petrolName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="65dp"
+            android:layout_marginTop="13dp"
+            android:text="Petrol"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/petrolSpend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="65dp"
+            android:layout_marginTop="25dp"
+            android:text="RM -"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/groceriesView"
+        android:layout_width="380dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="12dp"
+        android:textAlignment="center"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="3dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/petrolView">
+
+        <ImageView
+            android:id="@+id/groceriesImage"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="13dp"
+            android:src="@drawable/ic_groceries" />
+
+        <TextView
+            android:id="@+id/groceriesCashback"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="310dp"
+            android:layout_marginTop="13dp"
+            android:text="RM -"
+            android:textAlignment="inherit"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/groceriesName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="65dp"
+            android:layout_marginTop="13dp"
+            android:text="Groceries"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/groceriesSpend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="65dp"
+            android:layout_marginTop="25dp"
+            android:text="RM -"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/ewalletView"
+        android:layout_width="380dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="12dp"
+        android:textAlignment="center"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="3dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/groceriesView">
+
+        <ImageView
+            android:id="@+id/ewalletImage"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="13dp"
+            android:src="@drawable/ic_ewallet" />
+
+        <TextView
+            android:id="@+id/ewalletsCashback"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="310dp"
+            android:layout_marginTop="13dp"
+            android:text="RM -"
+            android:textAlignment="inherit"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/ewalletName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="65dp"
+            android:layout_marginTop="13dp"
+            android:text="E-wallet"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/ewalletSpend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="65dp"
+            android:layout_marginTop="25dp"
+            android:text="RM -"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/othersView"
+        android:layout_width="380dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="12dp"
+        android:textAlignment="center"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="3dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ewalletView">
+
+        <ImageView
+            android:id="@+id/othersImage"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="13dp"
+            android:src="@drawable/ic_others" />
+
+        <TextView
+            android:id="@+id/othersCashback"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="310dp"
+            android:layout_marginTop="13dp"
+            android:text="RM -"
+            android:textAlignment="inherit"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/othersName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="65dp"
+            android:layout_marginTop="13dp"
+            android:text="Others"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/othersSpend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="65dp"
+            android:layout_marginTop="25dp"
+            android:text="RM -"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.cardview.widget.CardView>
 
     <TextView
         android:id="@+id/text_total"
@@ -114,224 +332,6 @@
         android:textSize="15sp"
         app:layout_constraintStart_toEndOf="@+id/text_hint2"
         app:layout_constraintTop_toBottomOf="@+id/progressBar" />
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/groceriesView"
-        android:layout_width="380dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="12dp"
-        android:textAlignment="center"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="3dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.25"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/petrolView">
-
-        <ImageView
-            android:id="@+id/groceriesImage"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="13dp"
-            android:src="@drawable/ic_groceries" />
-
-        <TextView
-            android:id="@+id/groceriesCashback"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="310dp"
-            android:layout_marginTop="13dp"
-            android:text="RM -"
-            android:textAlignment="inherit"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:id="@+id/groceriesName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="65dp"
-            android:layout_marginTop="13dp"
-            android:text="Groceries"
-            android:textSize="12sp"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:id="@+id/groceriesSpend"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="65dp"
-            android:layout_marginTop="25dp"
-            android:text="RM -"
-            android:textSize="12sp"
-            app:layout_constraintStart_toStartOf="parent" />
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/othersView"
-        android:layout_width="380dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="12dp"
-        android:textAlignment="center"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="3dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.25"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ewalletView">
-
-        <ImageView
-            android:id="@+id/othersImage"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="13dp"
-            android:src="@drawable/ic_others" />
-
-        <TextView
-            android:id="@+id/othersCashback"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="310dp"
-            android:layout_marginTop="13dp"
-            android:text="RM -"
-            android:textAlignment="inherit"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:id="@+id/othersName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="65dp"
-            android:layout_marginTop="13dp"
-            android:text="Others"
-            android:textSize="12sp"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:id="@+id/othersSpend"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="65dp"
-            android:layout_marginTop="25dp"
-            android:text="RM -"
-            android:textSize="12sp"
-            app:layout_constraintStart_toStartOf="parent" />
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/petrolView"
-        android:layout_width="380dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="15dp"
-        android:textAlignment="center"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="3dp"
-        app:circularflow_radiusInDP="15"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.258"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_category">
-
-
-        <ImageView
-            android:id="@+id/petrolImage"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="13dp"
-            android:src="@drawable/ic_petrol" />
-
-        <TextView
-            android:id="@+id/petrolCashback"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="310dp"
-            android:layout_marginTop="13dp"
-            android:text="RM -"
-            android:textAlignment="inherit"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:id="@+id/petrolName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="65dp"
-            android:layout_marginTop="13dp"
-            android:text="Petrol"
-            android:textSize="12sp"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:id="@+id/petrolSpend"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="65dp"
-            android:layout_marginTop="25dp"
-            android:text="RM -"
-            android:textSize="12sp"
-            app:layout_constraintStart_toStartOf="parent" />
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/ewalletView"
-        android:layout_width="380dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="12dp"
-        android:textAlignment="center"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="3dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.25"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/groceriesView">
-
-        <ImageView
-            android:id="@+id/ewalletImage"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="13dp"
-            android:src="@drawable/ic_ewallet" />
-
-        <TextView
-            android:id="@+id/ewalletsCashback"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="310dp"
-            android:layout_marginTop="13dp"
-            android:text="RM -"
-            android:textAlignment="inherit"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:id="@+id/ewalletName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="65dp"
-            android:layout_marginTop="13dp"
-            android:text="E-wallet"
-            android:textSize="12sp"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:id="@+id/ewalletSpend"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="65dp"
-            android:layout_marginTop="25dp"
-            android:text="RM -"
-            android:textSize="12sp"
-            app:layout_constraintStart_toStartOf="parent" />
-
-    </androidx.cardview.widget.CardView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

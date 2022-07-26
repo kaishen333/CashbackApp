@@ -2,8 +2,10 @@ package com.example.cashbackapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.text.InputType;
 import android.util.Log;
@@ -29,6 +31,7 @@ public class UpdateExpense extends AppCompatActivity {
 
     DatePickerDialog picker;
     EditText eText;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,26 +42,6 @@ public class UpdateExpense extends AppCompatActivity {
         date_input.setInputType(InputType.TYPE_NULL);
         update_button = findViewById(R.id.update);
         delete_button = findViewById(R.id.delete);
-
-        //select date field
-        date_input.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                final Calendar cldr = Calendar.getInstance();
-                int day = cldr.get(Calendar.DAY_OF_MONTH);
-                int month = cldr.get(Calendar.MONTH);
-                int year = cldr.get(Calendar.YEAR);
-                // date picker dialog
-                picker = new DatePickerDialog(UpdateExpense.this,
-                        new DatePickerDialog.OnDateSetListener() {
-                            @Override
-                            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                                date_input.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year);
-                            }
-                        }, year, month, day);
-                picker.show();
-            }
-        });
 
         //First we call this
         getAndSetIntentData();
@@ -74,12 +57,40 @@ public class UpdateExpense extends AppCompatActivity {
                 myDB.updateExpense(id, category, amount, date);
             }
         });
-//        delete_button.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                confirmDialog();
-//            }
-//        });
+        delete_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                confirmDialog();
+            }
+        });
+
+        //select date field
+        date_input.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Calendar cldr = Calendar.getInstance();
+                int day = cldr.get(Calendar.DAY_OF_MONTH);
+                int month = cldr.get(Calendar.MONTH);
+                int year = cldr.get(Calendar.YEAR);
+                // date picker dialog
+                picker = new DatePickerDialog(UpdateExpense.this,
+                        new DatePickerDialog.OnDateSetListener() {
+                            @Override
+                            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                                Integer mon1 = (monthOfYear + 1);
+                                String mon2 = String.valueOf(mon1);
+                                String mon3 = '0'+mon2;
+                                String substr1 = mon3.substring(mon3.length() - 2);
+                                Integer day1 = dayOfMonth;
+                                String day2 = String.valueOf(day1);
+                                String day3 = '0'+day2;
+                                String substr2 = day3.substring(day3.length() - 2);
+                                date_input.setText(year+"-"+substr1+"-"+substr2);
+                            }
+                        }, year, month, day);
+                picker.show();
+            }
+        });
     }
 
     void getAndSetIntentData() {
@@ -104,5 +115,26 @@ public class UpdateExpense extends AppCompatActivity {
         } else {
             Toast.makeText(this, "No data.", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    void confirmDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Delete this expense ?");
+        builder.setMessage("Are you sure you want to delete " + category + " expense?");
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                MyDatabaseHelper myDB = new MyDatabaseHelper(UpdateExpense.this);
+                myDB.deleteOneRow(id);
+                finish();
+            }
+        });
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        });
+        builder.create().show();
     }
 }

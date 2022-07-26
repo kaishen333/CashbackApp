@@ -85,6 +85,61 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
+    public String readPetrolSpend() {
+        String query = "SELECT SUM(expense_amount) as expense FROM my_expense WHERE expense_category = 'Petrol' AND strftime('%m', expense_date) =  strftime('%m', 'now') AND strftime('%Y', expense_date) =  strftime('%Y', 'now');";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = db.rawQuery(query, null);
+        String result = "";
+        if (c.moveToFirst()) result = "" + c.getString(0);
+        c.close();
+        db.close();
+        return result;
+    }
+
+    public String readGroceriesSpend() {
+        String query = "SELECT SUM(expense_amount) as expense FROM my_expense WHERE expense_category = 'Groceries' AND strftime('%m', expense_date) =  strftime('%m', 'now') AND strftime('%Y', expense_date) =  strftime('%Y', 'now');";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = db.rawQuery(query, null);
+        String result = "";
+        if (c.moveToFirst()) result = "" + c.getString(0);
+        c.close();
+        db.close();
+        return result;
+    }
+
+    public String readEwalletSpend() {
+        String query = "SELECT SUM(expense_amount) as expense FROM my_expense WHERE expense_category = 'E-wallet'AND strftime('%m', expense_date) =  strftime('%m', 'now') AND strftime('%Y', expense_date) =  strftime('%Y', 'now');";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = db.rawQuery(query, null);
+        String result = "";
+        if (c.moveToFirst()) result = "" + c.getString(0);
+        c.close();
+        db.close();
+        return result;
+    }
+
+    public String readOthersSpend() {
+        String query = "SELECT SUM(expense_amount) as expense FROM my_expense WHERE expense_category = 'Others'AND strftime('%m', expense_date) =  strftime('%m', 'now') AND strftime('%Y', expense_date) =  strftime('%Y', 'now');";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = db.rawQuery(query, null);
+        String result = "";
+        if (c.moveToFirst()) result = "" + c.getString(0);
+        c.close();
+        db.close();
+        return result;
+    }
+
+    public String readTotalSpend() {
+        String query = "SELECT SUM(expense_amount) as expense FROM my_expense WHERE strftime('%m', expense_date) =  strftime('%m', 'now') AND strftime('%Y', expense_date) =  strftime('%Y', 'now');";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = db.rawQuery(query, null);
+        String result = "";
+        if (c.moveToFirst()) result = "" + c.getString(0);
+        c.close();
+        db.close();
+        return result;
+    }
+
     void deleteOneRow(String row_id) {
         SQLiteDatabase db = this.getWritableDatabase();
         long result = db.delete(TABLE_NAME, "_id=?", new String[]{row_id});

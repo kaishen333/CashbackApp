@@ -66,7 +66,15 @@ public class AddexpenseFragment extends Fragment {
                         new DatePickerDialog.OnDateSetListener() {
                             @Override
                             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                                eText.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year);
+                                Integer mon1 = (monthOfYear + 1);
+                                String mon2 = String.valueOf(mon1);
+                                String mon3 = '0'+mon2;
+                                String substr1 = mon3.substring(mon3.length() - 2);
+                                Integer day1 = dayOfMonth;
+                                String day2 = String.valueOf(day1);
+                                String day3 = '0'+day2;
+                                String substr2 = day3.substring(day3.length() - 2);
+                                eText.setText(year+"-"+substr1+"-"+substr2);
                             }
                         }, year, month, day);
                 picker.show();
