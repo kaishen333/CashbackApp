@@ -63,7 +63,6 @@ public class UpdateExpense extends AppCompatActivity {
                 confirmDialog();
             }
         });
-<<<<<<< HEAD
 
         //select date field
         date_input.setOnClickListener(new View.OnClickListener() {
@@ -80,20 +79,18 @@ public class UpdateExpense extends AppCompatActivity {
                             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
                                 Integer mon1 = (monthOfYear + 1);
                                 String mon2 = String.valueOf(mon1);
-                                String mon3 = '0'+mon2;
+                                String mon3 = '0' + mon2;
                                 String substr1 = mon3.substring(mon3.length() - 2);
                                 Integer day1 = dayOfMonth;
                                 String day2 = String.valueOf(day1);
-                                String day3 = '0'+day2;
+                                String day3 = '0' + day2;
                                 String substr2 = day3.substring(day3.length() - 2);
-                                date_input.setText(year+"-"+substr1+"-"+substr2);
+                                date_input.setText(year + "-" + substr1 + "-" + substr2);
                             }
                         }, year, month, day);
                 picker.show();
             }
         });
-=======
->>>>>>> e1e82c2d4a59f782f593201ce05134e147ab5763
     }
 
     void getAndSetIntentData() {
@@ -120,15 +117,9 @@ public class UpdateExpense extends AppCompatActivity {
         }
     }
 
-<<<<<<< HEAD
     void confirmDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Delete this expense ?");
-=======
-    void confirmDialog(){
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Delete this expense?");
->>>>>>> e1e82c2d4a59f782f593201ce05134e147ab5763
         builder.setMessage("Are you sure you want to delete " + category + " expense?");
         builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
