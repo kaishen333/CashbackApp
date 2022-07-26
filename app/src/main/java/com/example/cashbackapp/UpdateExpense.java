@@ -63,6 +63,7 @@ public class UpdateExpense extends AppCompatActivity {
                 confirmDialog();
             }
         });
+<<<<<<< HEAD
 
         //select date field
         date_input.setOnClickListener(new View.OnClickListener() {
@@ -91,6 +92,8 @@ public class UpdateExpense extends AppCompatActivity {
                 picker.show();
             }
         });
+=======
+>>>>>>> e1e82c2d4a59f782f593201ce05134e147ab5763
     }
 
     void getAndSetIntentData() {
@@ -117,9 +120,15 @@ public class UpdateExpense extends AppCompatActivity {
         }
     }
 
+<<<<<<< HEAD
     void confirmDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Delete this expense ?");
+=======
+    void confirmDialog(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Delete this expense?");
+>>>>>>> e1e82c2d4a59f782f593201ce05134e147ab5763
         builder.setMessage("Are you sure you want to delete " + category + " expense?");
         builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
