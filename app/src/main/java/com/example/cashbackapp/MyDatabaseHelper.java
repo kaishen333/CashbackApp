@@ -90,7 +90,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = db.rawQuery(query, null);
         String result = "";
-        if (c.moveToFirst()) result = "" + c.getString(0);
+        if (c.moveToFirst()) result = c.getString(0);
         c.close();
         db.close();
         return result;
@@ -101,7 +101,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = db.rawQuery(query, null);
         String result = "";
-        if (c.moveToFirst()) result = "" + c.getString(0);
+        if (c.moveToFirst()) result = c.getString(0);
         c.close();
         db.close();
         return result;
@@ -112,7 +112,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = db.rawQuery(query, null);
         String result = "";
-        if (c.moveToFirst()) result = "" + c.getString(0);
+        if (c.moveToFirst()) result = c.getString(0);
         c.close();
         db.close();
         return result;
@@ -123,7 +123,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = db.rawQuery(query, null);
         String result = "";
-        if (c.moveToFirst()) result = "" + c.getString(0);
+        if (c.moveToFirst()) result =  c.getString(0);
         c.close();
         db.close();
         return result;
@@ -134,7 +134,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = db.rawQuery(query, null);
         String result = "";
-        if (c.moveToFirst()) result = "" + c.getString(0);
+        if (c.moveToFirst()) result = c.getString(0);
         c.close();
         db.close();
         return result;
