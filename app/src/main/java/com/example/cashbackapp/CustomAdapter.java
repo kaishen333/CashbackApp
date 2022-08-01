@@ -49,7 +49,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     @Override
     public void onBindViewHolder(@NonNull final MyViewHolder holder, int position) {
 
-        holder.expense_id_txt.setText(String.valueOf(expense_id.get(position)));
+//        holder.expense_id_txt.setText(String.valueOf(expense_id.get(position)));
+        holder.expense_id_txt.setText("");
         holder.expense_category_txt.setText(String.valueOf(expense_category.get(position)));
         holder.expense_amount_txt.setText(String.valueOf(expense_amount.get(position)));
         holder.expense_date_txt.setText(String.valueOf(expense_date.get(position)));
