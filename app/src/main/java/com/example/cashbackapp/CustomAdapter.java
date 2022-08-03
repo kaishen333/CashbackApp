@@ -18,7 +18,6 @@ import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 
 
-
 import java.util.ArrayList;
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHolder> {
@@ -49,7 +48,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHold
     @Override
     public void onBindViewHolder(@NonNull final MyViewHolder holder, int position) {
 
-//        holder.expense_id_txt.setText(String.valueOf(expense_id.get(position)));
+        holder.expense_id_txt.setText(String.valueOf(expense_id.get(position)));
         holder.expense_id_txt.setText("");
         holder.expense_category_txt.setText(String.valueOf(expense_category.get(position)));
         holder.expense_amount_txt.setText(String.valueOf(expense_amount.get(position)));

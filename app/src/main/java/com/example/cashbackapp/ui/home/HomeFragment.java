@@ -76,7 +76,7 @@ public class HomeFragment extends Fragment {
                 if (myDB.readPetrolSpend() != null) {
                     petrolSpendTextView.setText("RM " + myDB.readPetrolSpend());
                     Double petrolCash = Double.parseDouble(myDB.readPetrolSpend())*petrolEcb;
-                    if (petrolCash > 15){
+                    if (petrolCash > 15.0){
                         petrolCash = 15.0;
                     }
                     totalcb+=petrolCash;
@@ -97,7 +97,7 @@ public class HomeFragment extends Fragment {
                     ewalletSpendTextView.setText("RM " + myDB.readEwalletSpend());
                     Double ewalletCash = Double.parseDouble(myDB.readEwalletSpend())*ewalletCb;
                     Double ewalleteCash = Double.parseDouble(myDB.readEwalletSpend())*ewalletEcb;
-                    if (ewalleteCash > 15){
+                    if (ewalleteCash > 15.0){
                         ewalleteCash = 15.0;
                     }
                     Double ewalletTotal = ewalletCash + ewalleteCash;
@@ -107,7 +107,7 @@ public class HomeFragment extends Fragment {
                 if (myDB.readOthersSpend() != null) {
                     othersSpendTextView.setText("RM " + myDB.readOthersSpend());
                     Double othersCash = Double.parseDouble(myDB.readOthersSpend())*othersCb;
-                    if (othersCash > 15){
+                    if (othersCash > 15.0){
                         othersCash = 15.0;
                     }
                     totalcb+=othersCash;
@@ -129,7 +129,7 @@ public class HomeFragment extends Fragment {
                 if (myDB.readPetrolSpend() != null) {
                     petrolSpendTextView.setText("RM " + myDB.readPetrolSpend());
                     Double petrolCash = Double.parseDouble(myDB.readPetrolSpend())*petrolEcb;
-                    if (petrolCash > 15){
+                    if (petrolCash > 15.0){
                         petrolCash = 15.0;
                     }
                     totalcb+=petrolCash;
@@ -138,8 +138,8 @@ public class HomeFragment extends Fragment {
                 if (myDB.readGroceriesSpend() != null) {
                     groceriesSpendTextView.setText("RM " + myDB.readGroceriesSpend());
                     Double groceriesCash = Double.parseDouble(myDB.readGroceriesSpend())*groceriesCb;
-                    Double grocerieseCash = Double.parseDouble(myDB.readEwalletSpend())*groceriesEcb;
-                    if (grocerieseCash > 15){
+                    Double grocerieseCash = Double.parseDouble(myDB.readGroceriesSpend())*groceriesEcb;
+                    if (grocerieseCash > 15.0){
                         grocerieseCash = 15.0;
                     }
                     Double groceriesTotal = groceriesCash + grocerieseCash;
@@ -150,7 +150,7 @@ public class HomeFragment extends Fragment {
                     ewalletSpendTextView.setText("RM " + myDB.readEwalletSpend());
                     Double ewalletCash = Double.parseDouble(myDB.readEwalletSpend())*ewalletCb;
                     Double ewalleteCash = Double.parseDouble(myDB.readEwalletSpend())*ewalletEcb;
-                    if (ewalleteCash > 15){
+                    if (ewalleteCash > 15.0){
                         ewalleteCash = 15.0;
                     }
                     Double ewalletTotal = ewalletCash + ewalleteCash;
@@ -160,7 +160,7 @@ public class HomeFragment extends Fragment {
                 if (myDB.readOthersSpend() != null) {
                     othersSpendTextView.setText("RM " + myDB.readOthersSpend());
                     Double othersCash = Double.parseDouble(myDB.readOthersSpend())*othersCb;
-                    if (othersCash > 15){
+                    if (othersCash > 15.0){
                         othersCash = 15.0;
                     }
                     totalcb+=othersCash;
